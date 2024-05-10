@@ -1,0 +1,68 @@
+/* Reset default margin and padding */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f7f4; /* Light green background */
+    color: #333; /* Dark text color */
+}
+
+.container {
+    max-width: 2000px;
+    margin: 0 auto;
+    display: flex;
+}
+
+header {
+    background-color: #5cb85c; /* Light green header */
+    color: #fff; /* White text color */
+    padding: 20px;
+    text-align: center;
+}
+
+aside {
+    flex: 0 0 200px;
+    width: 200px; /* Fixed width for sidebar */
+    background-color: #d9f7ee; /* Light blue sidebar */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Arrange sidebar content in a column */
+
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #333; /* Dark text color */
+    text-decoration: none;
+}
+
+ul li a:hover {
+    color: #666; /* Darker text color on hover */
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+footer {
+    position: fixed; /* Fixed position */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+    background-color: #5cb85c; /* Light green footer */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 10px 0;
+}
+
