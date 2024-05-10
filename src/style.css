@@ -1,0 +1,140 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f7f4; /* Light green background */
+    color: #333; /* Dark text color */
+    margin: 0; /* Reset body margin */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px auto; /* Sidebar and content columns */
+    grid-template-rows: auto 1fr auto; /* Header, content, and footer rows */
+    min-height: 100vh; /* Ensure container at least fills the height of the viewport */
+}
+
+header {
+    background-color: #5cb85c; /* Light green header */
+    color: #fff; /* White text color */
+    padding: 20px;
+    text-align: center;
+    grid-column: 1 / -1; /* Span across all columns */
+}
+
+aside {
+    background-color: #d9f7ee;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Arrange sidebar content in a column */
+    grid-column: 1; /* Sidebar occupies first column */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    color: #333;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #d9f7ee; /* Match sidebar background color */
+    min-width: 160px;
+    z-index: 1;
+    top: 100%; /* Adjust top position to start below the button */
+    left: 0; /* Position the dropdown content at the left edge of the button */
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+
+main {
+    display: flex;
+    padding: 20px;
+    grid-column: 2; /* Content occupies second column */
+}
+
+footer {
+    background-color: #5cb85c; /* Light green footer */
+    color: #fff; /* White text color */
+    text-align: center;
+    padding: 10px 0;
+    grid-column: 1 / -1; /* Span across all columns */
+}
+
+/* Placeholder styling for to-do list and options */
+.todo-list {
+    background-color: #ffffff; /* White background */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.todo-list h2 {
+    color: #333; /* Dark text color */
+}
+
+.todo-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-list li {
+    margin-bottom: 10px;
+}
+
+.todo-options {
+    background-color: #ffffff; /* White background */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px;
+}
+
+.todo-options h2 {
+    color: #333; /* Dark text color */
+}
+
+.todo-options ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.todo-options li {
+    margin-bottom: 10px;
+    color: #666; /* Medium dark text color */
+}
+
+.todo-options li span {
+    color: #333; /* Dark text color */
+}

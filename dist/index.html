@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="main.js"></script>
+		<link rel="stylesheet" href="../src/style.css" />
+	</head>
+	<body>
+		<header>
+			<h1>To-Do List</h1>
+		</header>
+
+			<main class="flex-container">
+                <div class="container">
+                    <aside>
+                        <div class="dropdown" id="dropdown">
+                            <button class="dropbtn" onclick="toggleDropdown()">
+                                &#9776; Menu
+                            </button>
+                            <div class="dropdown-content" id="dropdownContent">
+                                <a href="#" class="addTask" id="addTask">Add a task</a>
+                            </div>
+                        </div>
+                    </aside>
+				<section class="todo-list">
+					<h2>To-Do List</h2>
+					<ul>
+						<!-- Placeholder tasks -->
+						<li>Task 1</li>
+						<li>Task 2</li>
+						<li>Task 3</li>
+					    <li>
+							Date Created: <span id="date-created">January 1, 2024</span>
+						</li>
+						<li>Last Edited: <span id="last-edited">January 2, 2024</span></li>
+						<li>Total Tasks: <span id="total-tasks">3</span></li>
+					</ul>
+				</section>
+			</main>
+		</div>
+
+		<footer>
+			<p>&copy; 2024 Danny Tokarev</p>
+		</footer>
+	</body>
+</html>
