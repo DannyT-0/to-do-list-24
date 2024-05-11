@@ -1,4 +1,5 @@
-function toggleDropdown() {
-	var dropdownContent = document.getElementById("dropdownContent");
-	dropdownContent.classList.toggle("active");
-}
+import addTask from "../src/addTask.js";
+
+const add = document.getElementById("addTask");
+
+add.addEventListener("click", addTask);
