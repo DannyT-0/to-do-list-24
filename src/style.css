@@ -15,9 +15,9 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: 200px auto; /* Sidebar and content columns */
+    grid-template-columns:200px auto; /* Sidebar and content columns */
     grid-template-rows: auto 1fr auto; /* Header, content, and footer rows */
-    min-height: 100vh; /* Ensure container at least fills the height of the viewport */
+    /* min-height: 100vh;  */
 }
 
 header {
@@ -34,6 +34,17 @@ aside {
     display: flex;
     flex-direction: column; /* Arrange sidebar content in a column */
     grid-column: 1; /* Sidebar occupies first column */
+    margin-bottom: 15px;
+    margin-right: 18px;
+}
+
+.main-form {
+    background-color: #d9f7ee; /* Match sidebar background color */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px;
+    margin-bottom: 20px;
+    
 }
 
 .dropdown {
@@ -80,8 +91,10 @@ aside {
 
 main {
     display: flex;
+    flex-wrap: wrap;
     padding: 20px;
     grid-column: 2; /* Content occupies second column */
+    gap: 10px;
 }
 
 footer {
@@ -99,6 +112,8 @@ footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
     padding: 20px;
     margin-bottom: 20px;
+    height: 270px;
+    overflow: auto;
 }
 
 .todo-list h2 {
@@ -154,3 +169,39 @@ footer {
     background-color: #c9efde; /* Darker background color on hover */
 }
 
+/* Form styling */
+#taskForm {
+    background-color: #d9f7ee; /* Match sidebar background color */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#taskForm label {
+    margin-bottom: 5px;
+    color: #333; /* Dark text color */
+}
+
+#taskForm input[type="text"],
+#taskForm input[type="date"],
+#taskForm input[type="number"],
+#taskForm button[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 3px; /* Slightly rounded corners */
+}
+
+#taskForm button[type="submit"] {
+    background-color: #5cb85c; /* Light green button */
+    color: #fff; /* White text color */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#taskForm button[type="submit"]:hover {
+    background-color: #4cae4c; /* Darker green button on hover */
+}

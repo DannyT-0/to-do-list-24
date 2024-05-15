@@ -12,18 +12,31 @@
 			<h1>To-Do List</h1>
 		</header>
 
-			<main class="flex-container">
-                <div class="container">
-                    <aside>
-                        <div class="dropdown" id="dropdown">
-                            <button class="dropbtn" onclick="toggleDropdown()">
-                                &#9776; Menu
-                            </button>
-                            <div class="dropdown-content" id="dropdownContent">
-                                <a href="#" class="addTask" id="addTask">Add a task</a>
-                            </div>
-                        </div>
-                    </aside>
+		<main class="flex-container">
+			<div class="container">
+				<aside>
+					<form id="taskForm">
+						<label for="taskTitle">Title:</label>
+						<input type="text" id="taskTitle" name="taskTitle" />
+
+						<label for="dateCreated">Date Created:</label>
+						<input type="date" id="dateCreated" name="dateCreated" />
+
+						<label for="lastEdited">Last Edited:</label>
+						<input type="date" id="lastEdited" name="lastEdited" />
+
+						<label for="task1">Task 1:</label>
+						<input type="text" id="task1" name="task1" />
+
+						<label for="task2">Task 2:</label>
+						<input type="text" id="task2" name="task2" />
+
+						<label for="task3">Task 3:</label>
+						<input type="text" id="task3" name="task3" />
+
+						<button type="submit" id="addTask">Add Task</button>
+					</form>
+				</aside>
 				<section class="todo-list">
 					<h2>To-Do List</h2>
 					<ul>
@@ -31,16 +44,15 @@
 						<li>Task 1</li>
 						<li>Task 2</li>
 						<li>Task 3</li>
-					    <li>
+						<li>
 							Date Created: <span id="date-created">January 1, 2024</span>
 						</li>
 						<li>Last Edited: <span id="last-edited">January 2, 2024</span></li>
-						<li>Total Tasks: <span id="total-tasks">3</span></li>
 					</ul>
 					<button id="delete" class="delete">Delete</button>
 				</section>
-			</main>
-		</div>
+			</div>
+		</main>
 
 		<footer>
 			<p>&copy; 2024 Danny Tokarev</p>
