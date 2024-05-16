@@ -1,5 +1,9 @@
 import Todo from "./todoClass.js";
 
+let todoIdCounter = 1;
+// const todos = [];
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
+
 function addTask(event) {
 	event.preventDefault(); // Prevent default form submission behavior
 
@@ -11,7 +15,10 @@ function addTask(event) {
 	const task2 = document.getElementById("task2").value;
 	const task3 = document.getElementById("task3").value;
 
+	const todoId = `todo-${todoIdCounter++}`;
+
 	const todo = new Todo(
+		todoId,
 		taskTitle,
 		task1,
 		task2,
@@ -21,6 +28,9 @@ function addTask(event) {
 	);
 
 	console.log(todo);
+	todos.push(todo);
+
+	localStorage.setItem("todos", JSON.stringify(todos));
 
 	// Create section element with class todo-list
 	const section = document.createElement("section");
@@ -128,5 +138,66 @@ function updateHandler() {
 	this.addEventListener("click", editHandler);
 }
 
+function loadTodosFromLocalStorage() {
+	todos = JSON.parse(localStorage.getItem("todos")) || [];
+	const mainContainer = document.querySelector(".flex-container");
+
+	todos.forEach((todo) => {
+		const section = document.createElement("section");
+		section.className = "todo-list";
+
+		const h2 = document.createElement("h2");
+		h2.textContent = todo.title;
+		section.appendChild(h2);
+
+		const ul = document.createElement("ul");
+
+		todo.tasks.forEach((task) => {
+			if (task.trim() !== "") {
+				const li = document.createElement("li");
+				li.textContent = task;
+				ul.appendChild(li);
+			}
+		});
+
+		const dateCreatedLi = document.createElement("li");
+		dateCreatedLi.textContent = "Date Created: ";
+		const dateCreatedSpan = document.createElement("span");
+		dateCreatedSpan.id = "date-created";
+		dateCreatedSpan.textContent = todo.dateCreated;
+		dateCreatedLi.appendChild(dateCreatedSpan);
+		ul.appendChild(dateCreatedLi);
+
+		const lastEditedLi = document.createElement("li");
+		lastEditedLi.textContent = "Last Edited: ";
+		const lastEditedSpan = document.createElement("span");
+		lastEditedSpan.id = "last-edited";
+		lastEditedSpan.textContent = todo.lastEdited;
+		lastEditedLi.appendChild(lastEditedSpan);
+		ul.appendChild(lastEditedLi);
+
+		section.appendChild(ul);
+
+		const editButton = document.createElement("button");
+		editButton.textContent = "Edit";
+		editButton.className = "edit";
+		editButton.addEventListener("click", editHandler);
+		section.appendChild(editButton);
+
+		const deleteButton = document.createElement("button");
+		deleteButton.className = "delete";
+		deleteButton.textContent = "Delete";
+		deleteButton.addEventListener("click", () => {
+			section.remove();
+			// Add logic to remove todo from todos array and update local storage
+		});
+		section.appendChild(deleteButton);
+
+		mainContainer.appendChild(section);
+	});
+}
+
 // Export addTask function
 export default addTask;
+
+window.addEventListener("load", loadTodosFromLocalStorage);

@@ -1,14 +1,13 @@
 class Todo {
-	constructor(title, task1, task2, task3, dateCreated, lastEdited) {
+	constructor(todoId, title, task1, task2, task3, dateCreated, lastEdited) {
+		this.todoId = todoId;
 		this.title = title;
 		this.tasks = [task1, task2, task3];
 		this.dateCreated = dateCreated;
 		this.lastEdited = lastEdited;
 	}
 
-	delete() {
-		// Implement deletion logic here
-	}
+	delete() {}
 
 	edit(newTitle, newTasks) {
 		this.title = newTitle;
