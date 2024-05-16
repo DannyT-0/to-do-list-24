@@ -1,3 +1,5 @@
+import Todo from "./todoClass.js";
+
 function addTask(event) {
 	event.preventDefault(); // Prevent default form submission behavior
 
@@ -8,6 +10,17 @@ function addTask(event) {
 	const task1 = document.getElementById("task1").value;
 	const task2 = document.getElementById("task2").value;
 	const task3 = document.getElementById("task3").value;
+
+	const todo = new Todo(
+		taskTitle,
+		task1,
+		task2,
+		task3,
+		dateCreated,
+		lastEdited
+	);
+
+	console.log(todo);
 
 	// Create section element with class todo-list
 	const section = document.createElement("section");
